@@ -1,32 +1,32 @@
+//Cria referência ao form e elementos de resposta do programa
+
 const form = document.querySelector("form")
 const resp1 = document.querySelector("h3")
-const resp2 = document.querySelector("h4")
+
 
 //Cria um ouvinte
-
-
 form.addEventListener("submit", (e) =>{
-e.preventDefault()                 //evita o envio do form
-
-const nome = form.inNome.value           //obtém o nome
-const masculo = (form.inMasculo.value) //obtém a primeira nota
-const afeminado = (form.inAfeminado.value) //obtém a segunda nota
-const Altura = Number(form.inAltura.value)       //média das notas
+e.preventDefault()                 
 
 
-//Cria as condicionais
+const nome = form.inNome.value           
+const masculino = form.inMasculino.choked
+const Altura = Number(form.InAltura.value)
 
-if(altura =>1.7, sexo = masculo ) {
-        resp2.innerText = `Parabéns ${nome}! Você é gordo
-`
-        resp2.style.color = "blue"
-    } else if (media >=4) {
-        resp2.innerText = `Atenção ${nome}! Você esta de
-enxaqueca`
-        resp2.style.color = "green"
-    } else{
-        resp2.innerText = `Ops ${nome}! Você foi
-morto(a)`
-        resp2.style.color = "red"
-    }
+//calculando o peso ideal
+let peso
+if (masculino) {
+        peso = 22 * Math.pow(Altura, 2)
+} else {
+        peso = 21 * Math.pow(Altura, 2)
+}
+
+//resposta
+resp.innerText = `${nome} seu peso ideal é ${peso.toFixed(3)} kilo, quero dizer, voce esta gordo`
+})
+
+//segundo ouvinte, limpa o k9
+
+form.addEventListener("reset",(e) =>{
+        resp1.innerText = ""
 })
